@@ -123,7 +123,7 @@ export default function ContentList({items,contentType,fallbackItemImage,viewMor
                 {isFilled.keyText(item.data.title) && (
                 <li key={index} className="list-item opacity-0"
                 onMouseEnter={()=> onMouseEnter(index)}
-                ref={(el)=>(itemsRef.current[index]= el)}
+                ref={revealref}
                 >
 
                 <Link href={urlPrefix+"/"+item.uid} 
