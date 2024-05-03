@@ -10,3 +10,7 @@
       hsla(222, 0%, 0%, 0) 100%
     );
   }
+
+.body-text {
+  font-family: 'Urbanist', Arial, sans-serif; /* Fallback to Arial if Urbanist isn't available */
+}
