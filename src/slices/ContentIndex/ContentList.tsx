@@ -114,6 +114,10 @@ export default function ContentList({items,contentType,fallbackItemImage,viewMor
         setCurrentItem(null);
     }
 
+    const handleRefCallback = (index: number) => (el: HTMLLIElement | null) => {
+    itemsRef.current[index] = el;
+    };
+
     return (
     <div>
         <ul className="grid border-b border-b-slate-100"
@@ -123,7 +127,7 @@ export default function ContentList({items,contentType,fallbackItemImage,viewMor
                 {isFilled.keyText(item.data.title) && (
                 <li key={index} className="list-item opacity-0"
                 onMouseEnter={()=> onMouseEnter(index)}
-                ref={revealref}
+                ref={handelRefCallback(index)}
                 >
 
                 <Link href={urlPrefix+"/"+item.uid} 
